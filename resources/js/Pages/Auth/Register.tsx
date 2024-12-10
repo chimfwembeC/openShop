@@ -31,6 +31,8 @@ export default function Register() {
   return (
     <AuthenticationCard>
       <Head title="Register" />
+      <h2 className="text-2xl font-bold text-gray-900 mb-6">Register</h2>
+
 
       <form onSubmit={onSubmit}>
         <div>
@@ -38,7 +40,7 @@ export default function Register() {
           <TextInput
             id="name"
             type="text"
-            className="mt-1 block w-full"
+            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             value={form.data.name}
             onChange={e => form.setData('name', e.currentTarget.value)}
             required
@@ -53,7 +55,7 @@ export default function Register() {
           <TextInput
             id="email"
             type="email"
-            className="mt-1 block w-full"
+            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             value={form.data.email}
             onChange={e => form.setData('email', e.currentTarget.value)}
             required
@@ -66,7 +68,7 @@ export default function Register() {
           <TextInput
             id="password"
             type="password"
-            className="mt-1 block w-full"
+            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             value={form.data.password}
             onChange={e => form.setData('password', e.currentTarget.value)}
             required
@@ -82,7 +84,7 @@ export default function Register() {
           <TextInput
             id="password_confirmation"
             type="password"
-            className="mt-1 block w-full"
+            className="mt-1 block w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500"
             value={form.data.password_confirmation}
             onChange={e =>
               form.setData('password_confirmation', e.currentTarget.value)
@@ -132,6 +134,13 @@ export default function Register() {
           </div>
         )}
 
+        <button
+          className={classNames('w-full text-center mt-4 bg-indigo-600 text-white py-2 px-4 rounded-lg hover:bg-indigo-700 transition-colors', { 'opacity-25': form.processing })}
+          disabled={form.processing}
+        >
+          Register
+        </button>
+
         <div className="flex items-center justify-end mt-4">
           <Link
             href={route('login')}
@@ -139,13 +148,6 @@ export default function Register() {
           >
             Already registered?
           </Link>
-
-          <PrimaryButton
-            className={classNames('ml-4', { 'opacity-25': form.processing })}
-            disabled={form.processing}
-          >
-            Register
-          </PrimaryButton>
         </div>
       </form>
     </AuthenticationCard>

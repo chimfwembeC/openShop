@@ -1,13 +1,11 @@
 import React, { useState } from 'react';
 // import { Link } from 'react-router-dom';
 import { ShoppingCart, Search, Menu, User } from 'lucide-react';
-import { LoginModal } from './auth/LoginModal';
 import { UserMenu } from './auth/UserMenu';
 import { MobileMenu } from './MobileMenu';
 import { Link } from '@inertiajs/react';
 
-export function Navbar() {
-  const [isLoginModalOpen, setIsLoginModalOpen] = useState(false);
+export function Navbar() {  
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
 
@@ -59,13 +57,13 @@ export function Navbar() {
               {/* {isAuthenticated ? (
                 <UserMenu />
               ) : ( */}
-                <button
-                  onClick={() => setIsLoginModalOpen(true)}
+                <Link
+                  href='/login'
                   className="flex items-center space-x-2 p-2 rounded-lg hover:bg-gray-100"
                 >
                   <User className="h-5 w-5 text-gray-600" />
                   <span className="text-sm font-medium text-gray-700">Login</span>
-                </button>
+                </Link>
               {/* )} */}
               
               <button
@@ -77,12 +75,7 @@ export function Navbar() {
             </div>
           </div>
         </div>
-      </nav>
-      
-      <LoginModal
-        isOpen={isLoginModalOpen}
-        onClose={() => setIsLoginModalOpen(false)}
-      />
+      </nav>        
       
       <MobileMenu
         isOpen={isMobileMenuOpen}

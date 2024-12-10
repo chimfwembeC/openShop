@@ -42,15 +42,7 @@ export function LoginModal({ isOpen, onClose }: LoginModalProps) {
             {error}
           </div>
         )}
-
-        <div className="mb-6 p-4 bg-blue-50 rounded-lg">
-          <h3 className="font-medium text-blue-800 mb-2">Demo Accounts:</h3>
-          <ul className="text-sm text-blue-700 space-y-1">
-            <li>Admin: admin@stylehub.com / admin123</li>
-            <li>Staff: staff@stylehub.com / staff123</li>
-            <li>Customer: customer@stylehub.com / customer123</li>
-          </ul>
-        </div>
+{/*  */}
         
         <form onSubmit={handleSubmit} className="space-y-4">
           <div>

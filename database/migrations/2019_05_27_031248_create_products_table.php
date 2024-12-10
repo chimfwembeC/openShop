@@ -21,8 +21,12 @@ class CreateProductsTable extends Migration
             $table->string('price');
             $table->text('description');
             $table->integer('category_id');
-            $table->string('photo');
+            $table->string('sku')->unique();
+            $table->integer('stock_quantity')->default(0);
+            $table->decimal('discount_price', 10, 2)->nullable();
+            $table->boolean('is_active')->default(true);                        
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
