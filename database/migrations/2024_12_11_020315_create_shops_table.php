@@ -11,11 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('settings', function (Blueprint $table) {
+        Schema::create('shops', function (Blueprint $table) {
             $table->id();
-            $table->string('key')->unique(); // Setting key (e.g., 'site_name', 'timezone')
-            $table->string('value'); // Setting value (e.g., 'My Awesome Site', 'UTC')
-            $table->string('type')->nullable(); // You could store the type if needed (e.g., 'string', 'boolean')
+            $table->string("name")->unique();
+            $table->string("location");
+            $table->enum("status",['active','off'])->default('off');
             $table->softDeletes();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('settings');
+        Schema::dropIfExists('shops');
     }
 };

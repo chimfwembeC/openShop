@@ -5,9 +5,9 @@ import { UserMenu } from './auth/UserMenu';
 import { MobileMenu } from './MobileMenu';
 import { Link } from '@inertiajs/react';
 
-export function Navbar() {  
+export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
+const logo = './assets/favicon-32x32.png'
 
   return (
     <>
@@ -16,10 +16,10 @@ export function Navbar() {
           <div className="flex justify-between items-center h-16">
             <div className="flex-shrink-0">
               <Link href="/" className="text-2xl font-bold text-indigo-600">
-                Wyo Stores
+                {/* <img src={logo} className='w-18' alt='logo' /> */}WYO
               </Link>
             </div>
-            
+
             <div className="hidden md:block">
               <div className="ml-10 flex items-center space-x-8">
                 <Link href="/" className="text-gray-700 hover:text-indigo-600">
@@ -41,19 +41,19 @@ export function Navbar() {
                 )} */}
               </div>
             </div>
-            
+
             <div className="flex items-center space-x-4">
               <button className="p-2 rounded-lg hover:bg-gray-100">
                 <Search className="h-5 w-5 text-gray-600" />
               </button>
-              
+
               <button className="p-2 rounded-lg hover:bg-gray-100 relative">
                 <ShoppingCart className="h-5 w-5 text-gray-600" />
                 <span className="absolute top-0 right-0 h-4 w-4 bg-indigo-600 rounded-full text-xs text-white flex items-center justify-center">
                   2
                 </span>
               </button>
-              
+
               {/* {isAuthenticated ? (
                 <UserMenu />
               ) : ( */}
@@ -65,7 +65,7 @@ export function Navbar() {
                   <span className="text-sm font-medium text-gray-700">Login</span>
                 </Link>
               {/* )} */}
-              
+
               <button
                 onClick={() => setIsMobileMenuOpen(true)}
                 className="md:hidden p-2 rounded-lg hover:bg-gray-100"
@@ -75,8 +75,8 @@ export function Navbar() {
             </div>
           </div>
         </div>
-      </nav>        
-      
+      </nav>
+
       <MobileMenu
         isOpen={isMobileMenuOpen}
         onClose={() => setIsMobileMenuOpen(false)}

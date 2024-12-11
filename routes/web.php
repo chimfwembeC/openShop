@@ -2,6 +2,8 @@
 
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\DatabaseController;
+
 use Inertia\Inertia;
 
 /*
@@ -33,3 +35,6 @@ Route::middleware([
         return Inertia::render('Dashboard');
     })->name('dashboard');
 });
+
+
+Route::get('/tables', [DatabaseController::class, 'index']);
