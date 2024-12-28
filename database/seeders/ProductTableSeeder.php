@@ -76,11 +76,33 @@ class ProductTableSeeder extends Seeder
             'supplier_id' => $supplier2->id, // Using Nike supplier
         ]);
 
+
         ProductImage::create([
             'product_id' => $product3->id,
-            'image_path' => 'images/nike_pegasus_001.png',
-            'alt_text' => 'Nike Air Zoom Pegasus',
-            'order' => 1,
+            'image_path' => 'products/Nike Air Zoom Pegasus black - full.png',
+            'alt_text' => 'Nike Air Zoom Pegasus black Front',
+            'order' => 3,
+        ]);
+
+        ProductImage::create([
+            'product_id' => $product3->id,
+            'image_path' => 'products/Nike Air Zoom Pegasus black - one up , one flat.png',
+            'alt_text' => 'Nike Air Zoom Pegasus black',
+            'order' => 2,
+        ]);
+
+        ProductImage::create([
+            'product_id' => $product3->id,
+            'image_path' => 'products/Nike Air Zoom Pegasus black -front.png',
+            'alt_text' => 'Nike Air Zoom Pegasus black Front',
+            'order' => 3,
+        ]);
+
+        ProductImage::create([
+            'product_id' => $product3->id,
+            'image_path' => 'products/Nike Air Zoom Pegasus black - back.png',
+            'alt_text' => 'Nike Air Zoom Pegasus black Back',
+            'order' => 4,
         ]);
     }
 }

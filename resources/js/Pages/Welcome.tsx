@@ -11,32 +11,35 @@ import { ReviewSection } from '@/Components/ReviewSection';
 import GuestLayout from '@/Layouts/GuestLayout';
 
 interface Props {
-  canLogin: boolean;
-  canRegister: boolean;
-  laravelVersion: string;
-  phpVersion: string;
+    canLogin: boolean;
+    canRegister: boolean;
+    laravelVersion: string;
+    phpVersion: string;
+    products: [];
 }
 
 export default function Welcome({
-  canLogin,
-  canRegister,
-  laravelVersion,
-  phpVersion,
+    products,
+    canLogin,
+    canRegister,
+    laravelVersion,
+    phpVersion,
 }: Props) {
-  const route = useRoute();
-  const page = useTypedPage();
+    const route = useRoute();
+    const page = useTypedPage();
 
-  return (
-    <GuestLayout title='Welcome'>
-      <Head title="Welcome" />
+    // console.log('products', products);
+    return (
+        <GuestLayout title='Welcome'>
+            <Head title="Welcome" />
 
-      <main className="pt-16">
-        <Hero />
-        <ProductSection />
-        <CategorySection />
-        <NewArrivals />
-        <ReviewSection />
-      </main>
-    </GuestLayout>
-  );
+            <main className="pt-16">
+                <Hero />
+                <ProductSection products={products} />
+                <CategorySection />
+                <NewArrivals />
+                <ReviewSection />
+            </main>
+        </GuestLayout>
+    );
 }
